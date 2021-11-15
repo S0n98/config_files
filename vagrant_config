@@ -1,0 +1,12 @@
+Vagrant.configure("2") do |config|
+  config.vm.box = "gusztavvargadr/windows-server"
+  config.vm.box_version = "1809.0.2109"
+
+  config.vm.network "private_network", ip: "192.168.56.5"
+
+  config.vm.communicator = "winrm"
+  # Configure WinRM Connectivity
+  config.winrm.username = "vagrant"
+  config.winrm.password = "vagrant"
+
+end
